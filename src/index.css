@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg-abyss: #0f212e;
+  --color-bg-panel: #1a2c38;
+  --color-bg-input: #213743;
+  --color-bg-hover: #2f4553;
+  --color-stake-green: #00e701;
+}
+
+@layer base {
+  body {
+    background-color: #0f212e;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Tabular numerals to strictly eliminate Layout Jitter during 60 FPS gameplay */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Stake 3D Bevel Tactile Casino Tile */
+.tile-stake {
+  background-color: #213743;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 4px solid #121f28;
+  transform: translateY(0px);
+  transition: transform 0.06s ease, border-bottom-width 0.06s ease, background-color 0.12s ease;
+}
+
+.tile-stake:hover:not(:disabled) {
+  background-color: #284454;
+}
+
+.tile-stake:active:not(:disabled) {
+  border-bottom-width: 2px !important;
+  transform: translateY(2px) !important;
+}
+
+/* Custom scrollbars matching Stake's UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #213743;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f4553;
+}
+
+/* Hide scrollbars for carousel rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes float-up-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-35px) scale(0.95);
+  }
+}
+
+.animate-float-win {
+  animation: float-up-fade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

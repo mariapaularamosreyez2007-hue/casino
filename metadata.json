@@ -1,0 +1,8 @@
+{
+  "name": "Remix ASTED Casino \u0026 Sportsbook",
+  "description": "Clon exacto de Stake con texturas auténticas, juegos originales interactivos (Mines, Plinko, Crash, Dice), casino en vivo, slots y chat comunitario.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
